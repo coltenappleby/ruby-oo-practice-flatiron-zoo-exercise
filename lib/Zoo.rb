@@ -14,7 +14,20 @@ class Zoo
         return @@all_zoos
     end
     
+    def animals
+        Animal.all.select{|animal| animal.zoo == self}
+    end 
 
+    def animal_species
+        self.animals.map{|animal| animal.species}.uniq
+    end
 
+    def find_by_species(species_arg)
+        self.animals.select{|animal| animal.species == species_arg}
+    end 
+
+    def animal_nicknames
+        self.animals.map{|animal| animal.nickname}
+    end
 
 end

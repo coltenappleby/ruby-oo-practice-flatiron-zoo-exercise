@@ -1,7 +1,7 @@
 class Animal
 
     attr_reader :nickname, :species
-    attr_accessor :weight
+    attr_accessor :weight, :zoo
 
     @@all_animals = [] #call variable
 
