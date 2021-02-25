@@ -3,6 +3,11 @@ class Zoo
     attr_reader :name, :location
 
     @@all_zoos = []
+    
+    def self.find_by_location(location_arg)
+       @@all_zoos.select{|zoo|zoo.location == location_arg}
+    end
+
 
     def initialize(name_arg, location_arg)
         @name = name_arg
@@ -29,5 +34,7 @@ class Zoo
     def animal_nicknames
         self.animals.map{|animal| animal.nickname}
     end
+
+    
 
 end

@@ -5,6 +5,9 @@ class Animal
 
     @@all_animals = [] #call variable
 
+    def self.find_by_species(species_arg)
+        @@all_animals.select{|animals|animals.species == species_arg}
+    end
 
     def initialize(species_arg, weight_arg, nickname_arg)
         @species = species_arg
